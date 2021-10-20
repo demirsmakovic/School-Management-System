@@ -28,4 +28,9 @@ Route::get('admin/logout', [AdminController::class, 'Logout'])->name('admin.logo
 
 
 //User Controller
-Route::get('user/view_user', [UserController::class, 'UserView'])->name('user.view');
+Route::prefix('users')->group(function(){
+    Route::get('/view', [UserController::class, 'UserView'])->name('user.view');
+    Route::get('/add', [UserController::class, 'UserAdd'])->name('user.add');
+    Route::post('/store', [UserController::class, 'UserStore'])->name('user.store');
+
+});
