@@ -61,11 +61,11 @@ class StudentClassController extends Controller
 
     public function ClassDelete($id)
     {
-        $user = StudentClass::find($id);
-        $user->delete();
+        $data = StudentClass::find($id);
+        $data->delete();
         $notification = array(
             'message' => 'Student Class Deleted Successfull',
-            'alert-type' => 'danger'
+            'alert-type' => 'info'
         );
         
         return Redirect()->route('view.student.class')->with($notification);

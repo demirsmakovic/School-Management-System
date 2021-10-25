@@ -60,6 +60,9 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('view.student.class') }}"><i class="ti-more"></i>Sudent Class</a></li>
+            <li><a href="{{ route('view.student.year') }}"><i class="ti-more"></i>Sudent Year</a></li>
+            <li><a href="{{ route('view.student.group') }}"><i class="ti-more"></i>Sudent Group</a></li>
+            <li><a href="{{ route('view.student.shift') }}"><i class="ti-more"></i>Sudent Shift</a></li>
           </ul>
         </li>
 		

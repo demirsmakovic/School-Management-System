@@ -17,8 +17,8 @@
 
            <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Student Class List</h3>
-                <a href="{{ route('add.student.class') }}" style="float: right;" class="btn btn-rounded btn-success mb-5">Add Student Class</a>
+                <h3 class="box-title">Student Year List</h3>
+                <a href="{{ route('add.student.year') }}" style="float: right;" class="btn btn-rounded btn-success mb-5">Add Student Year</a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -37,8 +37,8 @@
                             <td>{{ $key+1 }}</td>
                             <td>{{ $class->name }}</td>
                             <td>
-                              <a href="{{ route('student.class.edit', $class->id) }}" class="btn btn-info">Edit</a>
-                              <a href="{{ route('student.class.delete', $class->id) }}" class="btn btn-danger" id="delete">Delete</a>
+                              <a href="{{ route('student.year.edit', $class->id) }}" class="btn btn-info">Edit</a>
+                              <a href="{{ route('student.year.delete', $class->id) }}" class="btn btn-danger" id="delete">Delete</a>
                             </td>
                         </tr>
                           @endforeach

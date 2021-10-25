@@ -12,17 +12,17 @@
        <!-- Basic Forms -->
         <div class="box">
           <div class="box-header with-border">
-            <h4 class="box-title">Edit Student Class</h4>
+            <h4 class="box-title">Edit Sudent Year</h4>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
             <div class="row">
               <div class="col">
-                  <form action="{{ route('student.class.update', $data->id) }}" method="POST">
+                  <form action="{{ route('student.year.update', $data->id) }}" method="POST">
                     @csrf
                         <div class="col-md-6">
                             <div class="form-group">
-                                <h5>Student Class Name<span class="text-danger">*</span></h5>
+                                <h5>Student Year Name<span class="text-danger">*</span></h5>
                                 <div class="controls">
                                   <input type="text" name="name" class="form-control" value="{{ $data->name }}" required data-validation-required-message="This field is required"> </div>
                                   @error('name')
