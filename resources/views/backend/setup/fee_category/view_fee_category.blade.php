@@ -17,8 +17,8 @@
 
            <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Student Group List</h3>
-                <a href="{{ route('add.student.group') }}" style="float: right;" class="btn btn-rounded btn-success mb-5">Add Student Group</a>
+                <h3 class="box-title">Fee Category List</h3>
+                <a href="{{ route('add.fee_category') }}" style="float: right;" class="btn btn-rounded btn-success mb-5">Add Fee Category</a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -37,8 +37,8 @@
                             <td>{{ $key+1 }}</td>
                             <td>{{ $data->name }}</td>
                             <td>
-                              <a href="{{ route('student.group.edit', $data->id) }}" class="btn btn-info">Edit</a>
-                              <a href="{{ route('student.group.delete', $data->id) }}" class="btn btn-danger" id="delete">Delete</a>
+                              <a href="{{ route('fee_category.edit', $data->id) }}" class="btn btn-info">Edit</a>
+                              <a href="{{ route('fee_category.delete', $data->id) }}" class="btn btn-danger" id="delete">Delete</a>
                             </td>
                         </tr>
                           @endforeach

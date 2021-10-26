@@ -54,7 +54,7 @@ class UserController extends Controller
         $data->usertype = $request->usertype;
         $data->name = $request->name;
         $data->email = $request->email;
-        $data->update();
+        $data->save();
 
         $notification = array(
             'message' => 'User Updated Successfull',
@@ -71,7 +71,7 @@ class UserController extends Controller
         $user->delete();
         $notification = array(
             'message' => 'User Deleted Successfull',
-            'alert-type' => 'danger'
+            'alert-type' => 'info'
         );
         
         return Redirect()->route('user.view')->with($notification);
