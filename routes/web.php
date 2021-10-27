@@ -56,7 +56,7 @@ Route::prefix('profile')->group(function(){
 });
 
 //Student Class Route
-Route::prefix('setup')->group(function(){
+Route::prefix('setups')->group(function(){
     Route::get('/student_class/view_student', [StudentClassController::class, 'ViewStudent'])->name('view.student.class');
     Route::get('/student_class/add_class', [StudentClassController::class, 'ClassAdd'])->name('add.student.class');
     Route::post('/student_class/add_class', [StudentClassController::class, 'ClassStore'])->name('store.student.class');
@@ -66,7 +66,7 @@ Route::prefix('setup')->group(function(){
 });
 
 //Student Year Route
-Route::prefix('setup')->group(function(){
+Route::prefix('setups')->group(function(){
     Route::get('/student_year/view_year', [StudentYearController::class, 'ViewStudentYear'])->name('view.student.year');
     Route::get('/student_year/add_year', [StudentYearController::class, 'StudentYearAdd'])->name('add.student.year');
     Route::post('/student_year/add_year', [StudentYearController::class, 'StudentYearStore'])->name('store.student.year');
@@ -76,7 +76,7 @@ Route::prefix('setup')->group(function(){
 });
 
 //Student Group Route
-Route::prefix('setup')->group(function(){
+Route::prefix('setups')->group(function(){
     Route::get('/student_group/view_group', [StudentGroupController::class, 'ViewStudentGroup'])->name('view.student.group');
     Route::get('/student_group/add_group', [StudentGroupController::class, 'StudentGroupAdd'])->name('add.student.group');
     Route::post('/student_group/add_group', [StudentGroupController::class, 'StudentGroupStore'])->name('store.student.group');
@@ -86,7 +86,7 @@ Route::prefix('setup')->group(function(){
 });
 
 //Student Shift Route
-Route::prefix('setup')->group(function(){
+Route::prefix('setups')->group(function(){
     Route::get('/student_shift/view_shift', [StudentShiftController::class, 'ViewStudentShift'])->name('view.student.shift');
     Route::get('/student_shift/add_shift', [StudentShiftController::class, 'StudentShiftAdd'])->name('add.student.shift');
     Route::post('/student_shift/add_shift', [StudentShiftController::class, 'StudentShiftStore'])->name('store.student.shift');
@@ -97,7 +97,7 @@ Route::prefix('setup')->group(function(){
 
 
 //Fee Category Route
-Route::prefix('setup')->group(function(){
+Route::prefix('setups')->group(function(){
     Route::get('/fee_category/view_fee_category', [FeeCategoryController::class, 'ViewFeeCategory'])->name('view.fee_category');
     Route::get('/fee_category/add_fee_category', [FeeCategoryController::class, 'FeeCategoryAdd'])->name('add.fee_category');
     Route::post('/fee_category/add_fee_category', [FeeCategoryController::class, 'FeeCategoryStore'])->name('store.fee_category');
@@ -107,7 +107,8 @@ Route::prefix('setup')->group(function(){
 });
 
 //Fee Amount Route
-Route::prefix('setup')->group(function(){
+Route::prefix('setups')->group(function(){
     Route::get('/fee_amount/view', [FeeAmountController::class, 'ViewFeeAmount'])->name('view.fee.amount');
     Route::get('/fee_amount/add', [FeeAmountController::class, 'FeeAmountAdd'])->name('add.fee.amount');
+    Route::post('/fee_amount/add', [FeeAmountController::class, 'FeeAmountStore'])->name('store.fee.amount');
 });

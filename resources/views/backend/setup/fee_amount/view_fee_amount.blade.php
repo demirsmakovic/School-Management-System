@@ -27,18 +27,18 @@
                       <thead>
                           <tr>
                               <th width="10%">SL</th>
-                              <th>Name</th>
+                              <th>Fee Category</th>
                               <th width="20%">Action</th>
                           </tr>
                       </thead>
                       <tbody>
-                          @foreach ($allData as $key => $data)
+                          @foreach ($allData as $key => $amount)
                           <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $data->name }}</td>
+                            <td>{{ $amount['fee_cateogry']['name'] }}</td>
                             <td>
-                              <a href="{{ route('fee_category.edit', $data->id) }}" class="btn btn-info">Edit</a>
-                              <a href="{{ route('fee_category.delete', $data->id) }}" class="btn btn-danger" id="delete">Delete</a>
+                              <a href="" class="btn btn-info">Edit</a>
+                              <a href="" class="btn btn-danger" id="delete">Delete</a>
                             </td>
                         </tr>
                           @endforeach

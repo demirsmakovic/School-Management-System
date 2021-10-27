@@ -19,7 +19,7 @@
           <div class="box-body">
             <div class="row">
               <div class="col">
-                  <form action="{{ route('store.fee_category') }}" method="POST">
+                  <form action="{{ route('store.fee.amount') }}" method="POST">
                     @csrf
 
                         <div class="row">
@@ -29,7 +29,7 @@
                             <div class="form-group">
                               <h5>Fee Category<span class="text-danger">*</span></h5>
                               <div class="controls">
-                                <select name="usertype" id="select" required class="form-control">
+                                <select name="fee_category_id" id="select" required class="form-control">
                                     <option value="" selected="" disabled="">Select Fee Category</option>
                                     @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -44,7 +44,7 @@
                               <div class="form-group">
                                 <h5>Student Class<span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                  <select name="usertype" id="select" required class="form-control">
+                                  <select name="class_id[]" id="select" required class="form-control">
                                       <option value="" selected="" disabled="">Select Student Class</option>
                                       @foreach ($classes as $class)
                                       <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -57,7 +57,7 @@
                               <div class="form-group">
                                 <h5>Amount <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                <input type="text" name="amount" class="form-control" required data-validation-required-message="This field is required"> </div>
+                                <input type="text" name="amount[]" class="form-control" required data-validation-required-message="This field is required"> </div>
                               </div>                              
                             </div>
                             <div class="col-md-2" style="padding-top: 25px;">
