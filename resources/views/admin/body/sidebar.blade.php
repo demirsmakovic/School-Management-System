@@ -64,6 +64,7 @@
             <li><a href="{{ route('view.student.group') }}"><i class="ti-more"></i>Sudent Group</a></li>
             <li><a href="{{ route('view.student.shift') }}"><i class="ti-more"></i>Sudent Shift</a></li>
             <li><a href="{{ route('view.fee_category') }}"><i class="ti-more"></i>Fee Category</a></li>
+            <li><a href="{{ route('view.fee.amount') }}"><i class="ti-more"></i>Fee Category Amount</a></li>
           </ul>
         </li>
 		
