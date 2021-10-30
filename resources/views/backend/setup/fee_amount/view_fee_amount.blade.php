@@ -37,7 +37,7 @@
                             <td>{{ $key+1 }}</td>
                             <td>{{ $amount['fee_cateogry']['name'] }}</td>
                             <td>
-                              <a href="" class="btn btn-info">Edit</a>
+                              <a href="{{ route('fee_amount.edit', $amount['fee_cateogry']['id']) }}" class="btn btn-info">Edit</a>
                               <a href="" class="btn btn-danger" id="delete">Delete</a>
                             </td>
                         </tr>
