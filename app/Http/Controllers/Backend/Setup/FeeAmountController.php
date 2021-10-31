@@ -52,4 +52,34 @@ class FeeAmountController extends Controller
         $data['classes'] = StudentClass::all();
         return view('backend.setup.fee_amount.edit_fee_amount',$data);
     }
+
+    public function FeeAmountUpdate(Request $request, $fee_category_id)
+    {
+        if($request->class_id == NULL){
+            $notification = array(
+                'message' => 'Sorry, You Do Not Selected Any Class Amount',
+                'alert-type' => 'error'
+            );
+            
+            return Redirect()->route('fee_amount.edit', $fee_category_id)->with($notification);
+        }else{
+
+        
+        $countClass = count($request->class_id);
+            FeeCategoryAmount::where('fee_category_id', $fee_category_id)->delete();
+    		for ($i=0; $i <$countClass ; $i++) { 
+    			$fee_amount = new FeeCategoryAmount();
+    			$fee_amount->fee_category_id = $request->fee_category_id;
+    			$fee_amount->class_id = $request->class_id[$i];
+    			$fee_amount->amount = $request->amount[$i];
+    			$fee_amount->save();
+            }
+        
+        $notification = array(
+            'message' => 'Data Updated Successfully',
+            'alert-type' => 'success'
+        );
+    }  
+        return Redirect()->route('view.fee.amount')->with($notification);
+    }
 }

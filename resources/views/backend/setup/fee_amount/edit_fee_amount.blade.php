@@ -19,7 +19,7 @@
           <div class="box-body">
             <div class="row">
               <div class="col">
-                  <form action="{{ route('store.fee.amount') }}" method="POST">
+                  <form action="{{ route('fee_amount.update',$editData[0]->fee_category_id) }}" method="POST">
                     @csrf
 
                         <div class="row">
@@ -58,7 +58,7 @@
                               <div class="form-group">
                                 <h5>Amount <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                <input type="text" name="amount[]" class="form-control" required data-validation-required-message="This field is required"> </div>
+                                <input type="text" name="amount[]" value="{{ $edit->amount }}" class="form-control" required data-validation-required-message="This field is required"> </div>
                               </div>                              
                             </div>
                             <div class="col-md-2" style="padding-top: 25px;">
