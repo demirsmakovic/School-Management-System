@@ -17,29 +17,27 @@
 
            <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Fee Amount List</h3>
+                <h3 class="box-title">Fee Amount Details</h3>
                 <a href="{{ route('add.fee.amount') }}" style="float: right;" class="btn btn-rounded btn-success mb-5">Add Fee Amount</a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
+                  <h4><strong>Fee Category : </strong>{{ $details['0']['fee_category']['name'] }}</h4>
                   <div class="table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
-                      <thead>
+                      <thead class="thead-light">
                           <tr>
                               <th width="10%">SL</th>
-                              <th>Fee Category</th>
-                              <th width="20%">Action</th>
+                              <th>Class name</th>
+                              <th width="20%">Amount</th>
                           </tr>
                       </thead>
                       <tbody>
-                          @foreach ($allData as $key => $amount)
+                          @foreach ($details as $key => $detail)
                           <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $amount['fee_category']['name'] }}</td>
-                            <td>
-                              <a href="{{ route('fee_amount.edit', $amount['fee_category']['id']) }}" class="btn btn-info">Edit</a>
-                              <a href="{{ route('fee_amount.details', $amount['fee_category']['id']) }}" class="btn btn-primary">Details</a>
-                            </td>
+                            <td>{{ $detail['student_class']['name'] }}</td>
+                            <td>{{ $detail->amount }}</td>
                         </tr>
                           @endforeach
                           
