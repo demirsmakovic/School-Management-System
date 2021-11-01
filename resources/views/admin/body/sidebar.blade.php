@@ -45,7 +45,7 @@ $route = Route::current()->getName();
 		  
         <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
           <a href="#">
-            <i data-feather="mail"></i> <span>Manage Profile</span>
+            <i data-feather="user"></i> <span>Manage Profile</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -58,7 +58,7 @@ $route = Route::current()->getName();
 
         <li class="treeview {{ ($prefix == '/setups')?'active':'' }}">
           <a href="#">
-            <i data-feather="mail"></i> <span>Setup Management</span>
+            <i data-feather="settings"></i> <span>Setup Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -72,6 +72,7 @@ $route = Route::current()->getName();
             <li><a href="{{ route('view.fee.amount') }}"><i class="ti-more"></i>Fee Category Amount</a></li>
             <li><a href="{{ route('view.exam.type') }}"><i class="ti-more"></i>Exam Type</a></li>
             <li><a href="{{ route('view.school.subject') }}"><i class="ti-more"></i>School Subject</a></li>
+            <li><a href="{{ route('view.assign.subject') }}"><i class="ti-more"></i>Assign Subject</a></li>
           </ul>
         </li>
 		
