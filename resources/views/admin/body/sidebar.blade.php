@@ -28,7 +28,7 @@ $route = Route::current()->getName();
 			<span>Dashboard</span>
           </a>
         </li>  
-		
+		    @if (Auth::user()->role == 'Admin')
         <li class="treeview {{ ($prefix == '/users')?'active':'' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
@@ -42,7 +42,7 @@ $route = Route::current()->getName();
             <li><a href="{{ route('user.add') }}"><i class="ti-more"></i>Add User</a></li>
           </ul>
         </li> 
-		  
+		    @endif
         <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
           <a href="#">
             <i data-feather="user"></i> <span>Manage Profile</span>
@@ -64,16 +64,28 @@ $route = Route::current()->getName();
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('view.student.class') }}"><i class="ti-more"></i>Sudent Class</a></li>
-            <li><a href="{{ route('view.student.year') }}"><i class="ti-more"></i>Sudent Year</a></li>
-            <li><a href="{{ route('view.student.group') }}"><i class="ti-more"></i>Sudent Group</a></li>
-            <li><a href="{{ route('view.student.shift') }}"><i class="ti-more"></i>Sudent Shift</a></li>
+            <li><a href="{{ route('view.student.class') }}"><i class="ti-more"></i>Student Class</a></li>
+            <li><a href="{{ route('view.student.year') }}"><i class="ti-more"></i>Student Year</a></li>
+            <li><a href="{{ route('view.student.group') }}"><i class="ti-more"></i>Student Group</a></li>
+            <li><a href="{{ route('view.student.shift') }}"><i class="ti-more"></i>Student Shift</a></li>
             <li><a href="{{ route('view.fee_category') }}"><i class="ti-more"></i>Fee Category</a></li>
             <li><a href="{{ route('view.fee.amount') }}"><i class="ti-more"></i>Fee Category Amount</a></li>
             <li><a href="{{ route('view.exam.type') }}"><i class="ti-more"></i>Exam Type</a></li>
             <li><a href="{{ route('view.school.subject') }}"><i class="ti-more"></i>School Subject</a></li>
             <li><a href="{{ route('view.assign.subject') }}"><i class="ti-more"></i>Assign Subject</a></li>
             <li><a href="{{ route('view.designation') }}"><i class="ti-more"></i>Designation</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview {{ ($prefix == '/student')?'active':'' }}">
+          <a href="#">
+            <i data-feather="layers"></i> <span>Student Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href=""><i class="ti-more"></i>Student Registration</a></li>
           </ul>
         </li>
 		

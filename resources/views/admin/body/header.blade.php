@@ -1,4 +1,3 @@
-@if (Route::has('login'))
 <header class="main-header">
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top pl-30">
@@ -105,6 +104,9 @@
  			$user = DB::table('users')->where('id',Auth::user()->id)->first();
 		  @endphp	
 	      <!-- User Account-->
+		  
+			  
+		  
           <li class="dropdown user user-menu">	
 			<a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
 				<img src="{{ (!empty($user->image))? url('upload/user_images/'.$user->image):url('upload/no_image.jpg') }}" alt="">
@@ -129,4 +131,3 @@
       </div>
     </nav>
   </header>
-  @endif
