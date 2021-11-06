@@ -13,13 +13,13 @@
        <!-- Basic Forms -->
         <div class="box">
           <div class="box-header with-border">
-            <h4 class="box-title">Add Fee Category</h4>
+            <h4 class="box-title">Student Registration</h4>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
             <div class="row">
               <div class="col">
-                  <form action="{{ route('store.fee.amount') }}" method="POST">
+                  <form action="{{ route('student.reg.store') }}" method="POST">
                     @csrf
 
         <div class="row">
