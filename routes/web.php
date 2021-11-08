@@ -162,8 +162,8 @@ Route::prefix('setups')->group(function(){
 });
 
 //School Subject Route
-Route::prefix('setups')->group(function(){
-    Route::get('/student/reg/view', [StudentRegController::class, 'StudentRegView'])->name('student.reg.view');
-    Route::get('/student/reg/add', [StudentRegController::class, 'StudentAdd'])->name('student.add');
-    Route::post('/student/reg/add', [StudentRegController::class, 'StudentRegStore'])->name('student.reg.store');
+Route::prefix('student')->group(function(){
+    Route::get('/view', [StudentRegController::class, 'StudentView'])->name('student.view');
+    Route::get('/reg/add', [StudentRegController::class, 'StudentAdd'])->name('student.add');
+    Route::post('/reg/add', [StudentRegController::class, 'StudentRegStore'])->name('student.reg.store');
 });

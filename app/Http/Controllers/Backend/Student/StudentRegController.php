@@ -15,10 +15,16 @@ use Illuminate\Support\Facades\DB;
 
 class StudentRegController extends Controller
 {
-    public function StudentRegView()
+    public function StudentView()
     {
-        $data['allData'] = AssignStudent::all();
-        return view('backend.student.student_reg.student_reg_view', $data);
+        $data['years'] = StudentYear::all();
+    	$data['classes'] = StudentClass::all();
+        
+        $data['year_id'] = StudentYear::orderBy('id','desc')->first()->id;
+    	$data['class_id'] = StudentClass::orderBy('id','desc')->first()->id;
+        $data['allData'] = AssignStudent::where('year_id',$data['year_id'])->where('class_id',$data['class_id'])->get();
+        
+        return view('backend.student.student_reg.student_view', $data);
     }
 
     public function StudentAdd()
@@ -79,7 +85,7 @@ class StudentRegController extends Controller
                 $file = $request->file('image');
                 $filename = date('YmdHi').$file->getClientOriginalName();
                 $file->move(public_path('upload/student_images'),$filename);
-                $user['image'] = $filename;
+                $user->image = $filename;
             }
              $user->save();
     
@@ -105,7 +111,7 @@ class StudentRegController extends Controller
                 'alert-type' => 'success'
             );
     
-            return redirect()->route('student.reg.view')->with($notification);
+            return redirect()->route('student.view')->with($notification);
     
         }
 }

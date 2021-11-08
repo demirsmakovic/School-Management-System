@@ -19,7 +19,7 @@
           <div class="box-body">
             <div class="row">
               <div class="col">
-                  <form action="{{ route('student.reg.store') }}" method="POST">
+                  <form action="{{ route('student.reg.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
         <div class="row">
