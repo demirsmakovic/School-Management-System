@@ -139,7 +139,7 @@
                         <select name="year_id" required="" class="form-control">
                                 <option value="" selected="" disabled="">Select Year</option>
                                  @foreach($years as $year)
-                                <option value="{{ $year->id }}" {{ ($editData->year_id == $year->id) ? 'selected' : '' }}>{{ $editData['year']['name'] }}</option>
+                                <option value="{{ $year->id }}" {{ ($editData->year_id == $year->id) ? 'selected' : '' }}>{{ $year->name }}</option>
                                  @endforeach 
                         </select>
                     </div>		 
@@ -153,7 +153,7 @@
                         <select name="class_id"  required="" class="form-control">
                             <option value="" selected="" disabled="">Select Class</option>
                             @foreach($classes as $class)
-                            <option value="{{ $class->id }}" {{ ($editData->class_id == $class->id) ? 'selected' : '' }}>{{ $editData['class']['name'] }}</option>
+                            <option value="{{ $class->id }}" {{ ($editData->class_id == $class->id) ? 'selected' : '' }}>{{ $class->name }}</option>
                             @endforeach      
                         </select>
                     </div>		 
@@ -167,7 +167,7 @@
                         <select name="group_id"   required="" class="form-control">
                             <option value="" selected="" disabled="">Select Group</option>
                              @foreach($groups as $group)
-                            <option value="{{ $group->id }}" {{ ($editData->group_id == $group->id) ? 'selected' : '' }}>{{ $editData['group']['name'] }}</option>
+                            <option value="{{ $group->id }}" {{ ($editData->group_id == $group->id) ? 'selected' : '' }}>{{ $group->name }}</option>
                              @endforeach 
                         </select> 
                     </div>		 
@@ -187,7 +187,7 @@
                         <select name="shift_id"  required="" class="form-control">
                             <option value="" selected="" disabled="">Select Shift</option>
                              @foreach($shifts as $shift)
-                            <option value="{{ $shift->id }}" {{ ($editData->shift_id == $shift->id) ? 'selected' : '' }}>{{ $editData['shift']['name'] }}</option>
+                            <option value="{{ $shift->id }}" {{ ($editData->shift_id == $shift->id) ? 'selected' : '' }}>{{ $shift->name }}</option>
                              @endforeach     
                         </select>
                     </div>		 

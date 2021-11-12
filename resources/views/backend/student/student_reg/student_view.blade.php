@@ -18,7 +18,7 @@
        </div>
    
     <div class="box-body">
-       <form method="GET" action="">
+      <form method="GET" action="{{ route('student.year.class.wise') }}">
         <div class="row">
           
     <div class="col-md-4">{{-- start col-md-4 --}}
@@ -109,7 +109,7 @@
  @endif
  <td>
    <a href="{{ route('student.edit', $data->student_id)}}" class="btn btn-info">Edit</a>
-   <a href="" class="btn btn-danger" id="delete">Delete</a>
+   <a href="{{ route('student.promotion', $data->student_id)}}" class="btn btn-danger">Promotion</a>
  </td>
       </tr>
         @endforeach

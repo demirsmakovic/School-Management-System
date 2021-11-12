@@ -159,8 +159,7 @@ class StudentRegController extends Controller
     
               $discount_student = DiscountStudent::where('assign_student_id', $request->id)->first();
               $discount_student->discount = $request->discount;
-              $discount_student->save();
-    
+              $discount_student->save();    
             });
     
     
@@ -170,6 +169,58 @@ class StudentRegController extends Controller
             );
     
             return redirect()->route('student.view')->with($notification);
+    
+        }
+
+        public function StudentPromotion($student_id)
+        {
+            $data['years'] = StudentYear::all();
+            $data['classes'] = StudentClass::all();
+            $data['shifts'] = StudentShift::all();
+            $data['groups'] = StudentGroup::all();
+            $data['editData'] = AssignStudent::with(['student','discount'])->where('student_id',$student_id)->first();
+            return view('backend.student.student_reg.student_promotion', $data);
+        }
+
+        public function PromotionUpdate(Request $request, $student_id)
+        {
+            DB::transaction(function() use($request, $student_id){
+
+                $assign_student = AssignStudent::where('id', $request->id)->where('student_id', $student_id)->first();
+
+                $assign_student->student_id = $student_id;
+                $assign_student->year_id = $request->year_id;
+                $assign_student->class_id = $request->class_id;
+                $assign_student->group_id = $request->group_id;
+                $assign_student->shift_id = $request->shift_id;
+                $assign_student->save();
+
+                $discount_student = DiscountStudent::where('assign_student_id', $request->id)->first();
+
+                $discount_student->assign_student_id = $assign_student->id;
+                $discount_student->fee_category_id = '1';
+                $discount_student->discount = $request->discount;
+                $discount_student->save();  
+            });
+        
+        
+            $notification = array(
+                'message' => 'Student Promotion Updated Successfully',
+                'alert-type' => 'success'
+            );
+        
+            return redirect()->route('student.view')->with($notification);
+        }
+
+        public function StudentClassYearWise(Request $request){
+            $data['years'] = StudentYear::all();
+            $data['classes'] = StudentClass::all();
+    
+            $data['year_id'] = $request->year_id;
+            $data['class_id'] = $request->class_id;
+             
+            $data['allData'] = AssignStudent::where('year_id',$request->year_id)->where('class_id',$request->class_id)->get();
+            return view('backend.student.student_reg.student_view',$data);
     
         }
 }
