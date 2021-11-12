@@ -108,7 +108,7 @@
  <td>{{ $data['student']['code'] }}</td>
  @endif
  <td>
-   <a href="" class="btn btn-info">Edit</a>
+   <a href="{{ route('student.edit', $data->student_id)}}" class="btn btn-info">Edit</a>
    <a href="" class="btn btn-danger" id="delete">Delete</a>
  </td>
       </tr>
